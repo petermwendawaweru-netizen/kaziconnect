@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find internships, industrial attachments, part-time work and entry-level jobs in Kenya.">
+  <title>KaziConnect Kenya | Student Job Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#">KaziConnect<span>.</span></a>
+    <nav>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">OPPORTUNITIES FOR KENYAN STUDENTS</p>
+      <h1>Your next opportunity<br>starts here.</h1>
+      <p>Discover internships, attachments and jobs
+        that help you build your career.</p>
+
+      <form id="searchForm" class="search-bar">
+        <input id="searchInput" type="search"
+          placeholder="Job title, skill or company"
+          aria-label="Search jobs">
+        <select id="typeFilter" aria-label="Job type">
+          <option value="all">All opportunities</option>
+          <option value="Attachment">Attachment</option>
+          <option value="Internship">Internship</option>
+          <option value="Part-time">Part-time</option>
+          <option value="Entry-level">Entry-level</option>
+        </select>
+        <button type="submit">Search jobs</button>
+      </form>
+    </section>
+
+    <section id="categories" class="section">
+      <h2>Explore opportunities</h2>
+      <div class="categories">
+        <button class="category" data-type="Attachment">Industrial Attachment</button>
+        <button class="category" data-type="Internship">Internships</button>
+        <button class="category" data-type="Part-time">Part-time Jobs</button>
+        <button class="category" data-type="Entry-level">Entry-level Jobs</button>
+      </div>
+    </section>
+
+    <section id="jobs" class="section">
+      <div class="section-heading">
+        <div>
+          <h2>Featured opportunities</h2>
+          <p>Explore sample listings to see how the platform works.</p>
+        </div>
+        <button id="savedToggle">Saved jobs</button>
+      </div>
+
+      <p id="resultsCount" aria-live="polite"></p>
+      <div id="jobList" class="job-list"></div>
+      <p id="emptyMessage" hidden>No matching jobs found.</p>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Helping students take the next step</h2>
+      <p>KaziConnect aims to make it easier for Kenyan students
+        and recent graduates to discover career opportunities.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> KaziConnect Kenya</p>
+    <p>Always verify vacancies with the employer before applying.</p>
+  </footer>
+
+</body>
+</html>

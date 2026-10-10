@@ -1,0 +1,402 @@
+
+/* ===== 1. Global styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #0b7555;
+  --primary-dark: #07563f;
+  --background: #f5f8f7;
+  --surface: #ffffff;
+  --text: #172a25;
+  --muted: #687871;
+  --border: #dfe8e3;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ===== 2. Navigation ===== */
+.navbar {
+  min-height: 76px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 26px;
+}
+
+.navbar nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* ===== 3. Hero section ===== */
+.hero {
+  padding: 85px 7% 75px;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f5ed, #f7fbf8);
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 18px 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.hero > p:not(.eyebrow) {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+/* ===== 4. Search form ===== */
+.search-bar {
+  max-width: 950px;
+  margin: 35px auto 0;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 35px #174b3510;
+}
+
+.search-bar input,
+.search-bar select {
+  min-width: 0;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+}
+
+.search-bar button,
+.section-heading button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.search-bar button:hover,
+.section-heading button:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== 5. General sections ===== */
+.section {
+  padding: 65px 7%;
+}
+
+.section h2,
+.about h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.5px;
+}
+
+.section > h2 {
+  margin-bottom: 22px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.category {
+  min-height: 95px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.category:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ===== 6. Job listings ===== */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.section-heading p,
+.about p {
+  color: var(--muted);
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.job-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px #173d2c0d;
+  border-color: #a6cbb9;
+}
+
+.job-type {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e4f5ed;
+  color: var(--primary-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.job-card h3 {
+  margin-bottom: 5px;
+  font-size: 1.12rem;
+}
+
+.company {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.job-location {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.job-description {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.job-bottom {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.job-bottom a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.save-job {
+  padding: 7px 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+}
+
+.save-job.saved {
+  background: #e4f5ed;
+  color: var(--primary-dark);
+  border-color: var(--primary);
+}
+
+#resultsCount {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#emptyMessage {
+  padding: 30px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ===== 7. About section ===== */
+.about {
+  margin: 0 7% 65px;
+  padding: 50px 30px;
+  text-align: center;
+  background: #e5f3ec;
+  border-radius: 18px;
+}
+
+.about p {
+  max-width: 650px;
+  margin: 12px auto 0;
+}
+
+/* ===== 8. Footer ===== */
+footer {
+  padding: 30px 7%;
+  text-align: center;
+  background: #132c24;
+  color: #d6e5dd;
+  font-size: 0.9rem;
+}
+
+footer p + p {
+  margin-top: 5px;
+  color: #a9c4b7;
+}
+
+/* ===== 9. Responsive design ===== */
+@media (max-width: 900px) {
+  .job-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-bar button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 5%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 60px 5%;
+  }
+
+  .hero h1 {
+    letter-spacing: -0.8px;
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar button {
+    grid-column: auto;
+  }
+
+  .section {
+    padding: 45px 5%;
+  }
+
+  .categories,
+  .job-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about {
+    margin: 0 5% 45px;
+    padding: 35px 20px;
+  }
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #65b99a;
+  outline-offset: 3px;
+}
